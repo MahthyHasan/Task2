@@ -1,0 +1,20 @@
+# Node/React projects
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
+.env.* 
+
+# Logs and system files
+*.log
+*.log.*
+.DS_Store
+Thumbs.db
+
+# Editor/IDE settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
