@@ -4,11 +4,15 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.routes.js';
+import nodemailer from 'nodemailer';
+import { scheduleWeatherEmails } from './shedulers/emailScheduler.js';
+
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5003;
+
 
 const corsOptions = {
     origin: 'http://localhost:3001',
@@ -28,6 +32,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 
+
+scheduleWeatherEmails();
 
 const connectDB = async () => {
     try {

@@ -8,15 +8,7 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true,
     },
-    fullname: {
-        type: String,
-        required: true,
-    },
     password: {
-        type: String,
-        required: true,
-    },
-    role: {
         type: String,
         required: true,
     },
@@ -25,11 +17,7 @@ const userSchema = mongoose.Schema({
         required: true,
         unique: true,
     },
-
-    profileImg: {
-        type: String,
-        default: "",
-    },
+    location: { lat: Number, lon: Number },
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
